@@ -82,7 +82,6 @@
             border-bottom-style: solid;
         }
 
-        /* 添加滚动条样式 */
         .content-wrapper::-webkit-scrollbar {
             width: 8px;
         }
@@ -141,9 +140,16 @@
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 15px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 16px 0;
+            cursor: pointer; 
+        }
+
+        .image-error {
+            border: 1px solid #ff0000;
+            padding: 10px;
+            text-align: center;
+            color: #ff0000;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -179,7 +185,38 @@
         function closeWebsite() {
             window.close();
         }
+                function handleImageError(img) {
+            img.onerror = null; 
+            img.setAttribute('data-original-src', img.src); 
+            img.src = ''; 
+            img.alt = '图片加载失败，点击重试';
+            img.classList.add('image-error');
+        }
 
+
+        function reloadImage(img) {
+            if (img.classList.contains('image-error')) {
+                img.src = img.getAttribute('data-original-src') || img.src;
+                img.classList.remove('image-error');
+            }
+        }
+
+
+        function autoReloadImages() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (!img.complete || img.naturalHeight === 0) {
+                    img.src = img.getAttribute('data-original-src') || img.src;
+                }
+            });
+        }
+
+
+        window.onload = function() {
+            loadArticle();
+            setTimeout(autoReloadImages, 5000);
+        }
+        
         document.addEventListener('DOMContentLoaded', () => {
             processLinks();
             processLineBreaks();
