@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>搭建教程</title>
+    <title>建站教程</title>
     <style>
         :root {
             --bg-gradient: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
@@ -82,6 +82,7 @@
             border-bottom-style: solid;
         }
 
+        /* 添加滚动条样式 */
         .content-wrapper::-webkit-scrollbar {
             width: 8px;
         }
@@ -135,6 +136,15 @@
         .close-button::after {
             transform: rotate(-45deg);
         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -143,9 +153,9 @@
     <div class="container">
         <div class="content-wrapper">
             <div class="content">
-                <h1>如何搭建你的个人去中心化网站</h1>
+                <h1>创建你的个人网站～</h1>
                 <p></p>
-                <p>要构建一个展示你的文章或是作为网站主页的页面，也就是一个静态网站，有免费且简单的方法。本文主要介绍的是介绍如何通过我已经搭建好的网站框架制作展示你自己想展示的内容。\n\n你需要一个github账号，这是这种构建方式主要依赖的平台。推荐你使用它的网页版：github.com，因为应用不能实现部分功能。由于这个网站是国外网站，不会有被封的风险，但是网速不能保证，有条件的还是开代理。你可以通过各种邮箱注册，为了保险最好不要用国内邮箱。你可以先通过国内邮箱注册一个proton邮箱，再用proton邮箱注册github。\n\n注册好以后，就会自动跳转到你的github主页。然后在相同浏览器打开这个[link:链接](https://github.com/FDO-page/jiaocheng/blob/main/homepage.html)。这时你就会看到我的主页的模版的代码。点击右上角“…”按钮，点击“download”，就可以下载这个文件了。如果你使用电脑打开这个网页的，你可以同时按住“ctrl”“shift”和“s”键，达到同样效果。\n\n下载好后又点击[link:链接](https://github.com/FDO-page/jiaocheng/blob/main/articlepage.html)。重复以上步骤，你就得到了代码的文件和文章页面的代码。现在你要重新打开你的github主页。\n\n如果你是苹果手机，请先确保你手机内有“文件”软件。点击下载好的文件（一般在你使用的浏览器中可以找到），点击“分享”或“用其他app打开”，选择储存到文件，选择一个好找的位置，比如“我的手机”并保存。如果你是安卓系统，最好是下载文件管理器，再重复类似步骤。如果你不会，可以浏览器搜索“安卓 下载文件 位置”了解。\n\n如果你是电脑用户，请确保文件存在好找的地方。\n\n接下来是建立你自己的库。点击屏幕中间的绿色“create a new repository”按钮。在下方找到“repository name”。输入你想要的库的名称，不要使用中文。注意，如果你并未购在其他平台买网址，github page默认分给你的网址中包含你现在填的名称。\n\n记得将默认选项选择的私有库改为公有库，建议使用选择公共仓库，因为私有仓库 有配额限制 ，确保所选是“public”。其他选项不要更改。点击绿色Create repository按钮。现在你有一个你自己的仓库了，请重复步骤再建一个仓库，用于你的第一篇文章。\n\n请回到你新建的用于制作网站主页的仓库。找到蓝色的长方形面板（如果你是手机端，请向下滑动寻找），以“Q”开头。你可以看到其中有很多蓝色的字，点击第二个以“uploading”开头的。\n\n接下来你就会跳转到上传界面，点击中间的蓝色文字“choose your files”，选择你在之前储存的首页的（“homepage.html”）文件（如果你是苹果，需要先点击文件，如果你是安卓，请自行找“安卓下载文件存储位置”相关教程了解）。点击底部“commit change”。\n\n接下来打开之前创建的另一个库重复步骤，将下载的”articlepage.html”文件上传。接下来点击你的文件的名字（articlepage.html），点击代码上方右边的长得像一支笔的按钮，找到上方的显示原有名字的方框，将其改为”index.html”，另一个库的文件同理。注意字母不要大写。点击commit change 保存。\n\n现在回到库的主页，找到上方导航栏的“Settings”并点击（手机版找到右上角最上面的"…"按钮点击后找到setting），向下滑动找到“Pages”选项。（手机版向下滑动）找到页面内”none”按钮，点击后选择”main”。点击旁边的”save”，你就部署好了模版的网站，另一仓库同理。\n\n等几分钟后刷新这个界面，你就可以看到你部署的网页的网址了。接下来就要修改这个网页，使它显示你个人的内容。\n\n接下来回到github主页，点击你的库。我们先来改变你的网站主页。点击index.html，点击代码上方右边的长得像一支笔的按钮，向下滑动代码。\n\n你可以找到其中的对应网站的中文汉字，那些部分就是可以更改的，请对照着网站进行更改。有一些文字内容的提示：你使用以下结构可以引用外部链接[lin:A](a.com)你需要在lin后面加上k字母，此代码作用是显示“A”，点击后跳转a.com网站（示例）。\n\n如果你想要换行，你可以输入/n。如果你嫌手动换行麻烦，可以使用[link:这个网站](https://fdo-page.github.io/words/)转换你的内容\n\n如果你觉得这个示例网站不符合你的审美，你可以去我的仓库找到更多美丽的页面。如果你觉得下载过于麻烦，也可以拷贝所有代码然后新建。[link:我的模版仓库](https://github.com/FDO-page/jiaocheng)里面如果还是没有你喜欢的界面，欢迎向我反馈以让我了解你的需求，请直接在GitHub上向我反馈。\n\n快去构建你的网站吧～</p>
+                <p>构建一个展示你的文章或是作为网站主页的页面，也就是一个静态网站，有免费且简单的方法。本文主要介绍的是介绍如何通过我已经搭建好的网站框架制作展示你自己想展示的内容。\n 你需要一个github账号，这是这种构建方式主要依赖的平台。推荐你使用它的[link:网页版](github.com)，因为应用版本部分功能不能实现。由于这是一个国外网站，没有因言获罪的风险。但是连接速度不能保证，有条件的推荐开代理。你可以通过各种邮箱注册，为了保险最好不要用国内邮箱。如果你开了代理，你可以先通过国内邮箱注册一个[proton邮箱](https://mail.proton.me/)，再用proton邮箱注册github。\n\n注意，你所填的填用户名与你最后得到的免费网址有关。所以如果你需要好记的免费网址，你的用户名也要尽量好记。当你注册好后，你就会来到Github主网站。你可以了解一下主页的布局，Github是一个适合协作共享的平台，你也可以在上面学习、交流。特别适合学写网页程序，因为你可以通过“GitHub pages”直接将你的成果转化为真实长久的网页。我们就是要使用的就是这个功能。\n\n如果你对代码一窍不通，你一样可以跟着我们的教程作出展示你的文章等信息的漂亮的网站。如果你会且可以使用AI，你也可以将你的想法告诉AI并让其编写一个网页程序即可。我们也提供了一些模版可供使用，你可以访问[link:这个网站](https://github.com/FDO-page/jiaocheng)查看。现在请确保你已经做好了以下的准备，正式开始搭建你的个人网站。\n\n前置条件准备：\n1.一个浏览器，同时打开本网页和GitHub网页，GitHub网页已登录你的帐号，没有其他打开的网页；\n2.一颗清醒的好学的大脑；\n\n首先，选择你想要的风格。如果你更喜欢本页面这样的背景为蓝绿色相间的，以透明毛玻璃效果作为文字的面板的显示效果，请你分别点击打开[link:这个链接](https://github.com/FDO-page/jiaocheng/blob/main/homepage.html)和[link:这个链接](https://github.com/FDO-page/jiaocheng/blob/main/articlepage.html)。如果你更喜欢简洁的黑白的风格，请你分别点击打开[link:这个链接](https://github.com/FDO-page/jiaocheng/blob/main/succinct_home_page.html)和[link:这个链接](https://github.com/FDO-page/jiaocheng/blob/main/succinct_article_page.html)。这两个链接的顺序为前一个是主页，后一个是文章页。\n\n接下来，回到你的GitHub主页，不要关闭刚才打开的两个网站。这时你一共有四个打开着的网站。接下来我们要新建一个仓库。在网站的主页找到绿色的“Create a new repository”。先不要点击，上面有几个选项需要填写。从上往下先有一个以“name your”开头的的文字框，点击后可以填写内容。在这里你填入的将是仓库的名称。你所填的填与你最后得到的免费网址有关。所以如果你需要好记的免费网址，你的仓库名也要尽量好记。（如下图）\n\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1380.jpeg]\n\n你可以吧选项改为public，也就是公有库。因为如果是私有库，免费版用户的GitHub actions 会有限额。接下来就可以点击新建了。你会跳转到你新建的仓库的内部。这时候还没有一个文件，所以里面的都是提示。别担心，向下滑到浅蓝色面板，找到“creating”开头的蓝色文字，也就是第一串蓝色文字，点击，意思是新建一个文件。\n\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1381.jpeg]\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1382.jpeg]\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1383.jpeg]\n\n接下来你会跳转到文件界面。先找到页面上方含有“name your file”的文本框，填入index.html文本。意思是这是一个html格式的文件，名字叫index。一定要是这个名字，因为这是一个标识，让接下来GitHub pages知道你的网站的代码。接下来跳转到之前你选择的主页和文章页面代码的任意一个。全选代码框里的内容（可能要手动选择）并拷贝它们。回到你新建的代码界面，点击代码框并黏贴。你的这个页面的代码部分就构建好了。\n\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1384.jpeg]\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1387.jpeg]\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1388.jpeg]\n\n点击右上方绿色按钮，保存你的文件。在接下来弹出的面板上找到同样的绿色按钮，直接保存。这个菜单是填写你的这个仓库的更新日志，有兴趣可以填写。接下来就保存了。如果跳转到仓库主页就是正确的，哪怕他弹出提示也直接忽略。那个提示意思是你没有保存就要关闭这个页面，但实际上可能是误报。\n\n接下来就可以关闭你已经复制了代码的我的GitHub模版，重复以上步骤就可获得另一个。注意仓库名称不得重复，但不同仓库间的文件名称可以重复。所以一样给这个文件命名为index.html。接下来你就要通过GitHub pages部署这个代码。你需要打开一个仓库，点击右上角的省略号（电脑不用），再点击setting按钮。\n\n在页面中找到“pages”并点击。如果你是电脑界面，你直接就可以看到相关设置。如果你是手机界面，你需要向下滑动找到。找到名叫none的按钮并点击，选择main并点击，也就是将你的文件部署在main分支下，如果你有创建其他分支，你也可以点击他们。\n\n接下来点击右边的save保存设置，再刷新几次页面。一分钟以后你就会得到你的网址，点击右边的“visit”开头按钮，检查你的网站是否正常。如果你上述步骤都正确，那么你将看到正常显示的网站。接下来重复以上步骤，把另一个仓库的page功能也打开。\n\n探索编辑\n\n好了，现在你已经有有你的个人网页了，你可以在任何时候通过分配给你的链接访问它。接下来我将介绍这个网页的功能以及你如何更改这个网页。这个网页可以允许你引用外部链接、引用外部图片。首先，回到你刚才新建的任意的仓库的代码位置，通过直接点击它的名字。找到右上方的笔形状的按钮(手机版为省略号，点击后选择edit开头文本并点击)，点击。\n\n向下滑动寻找中文文本。首先你见到的第一个中文文本就是网页的名称。这个名称显示在电脑浏览时切换到这个已经打开的网站前浏览器上方导航栏显示的文字。接下来要向下滑动一会，你看到的第二串中文文本将会是文章的标题，也就是点开页面后的大字。\n\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1390.jpeg]\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1391.jpeg]\n\n你看到的第三串文字就是正文内容了。在正文和标题中，都有一些特殊的代码可以实现特定功能。首先是引用链接，你需要使用[li好nk:应该显示的文字](点击后跳转的网页链接)。你可以复制后去掉“好”字（因为这个页面也支持这个代码）后填充相应内容并黏贴进标题或正文的代码。需要注意的是这串代码中的符号是英文的符号。\n\n还有是引用图片，你需要使用[ima好ge:图片的链接]进行引用。也是英文符号，去掉好字。那么如何创建一个图片的链接呢？也很简单。打开一个仓库（可以是新建用来专门储存的，也可以和网页代码放在一起），如果是新的仓库，翻到浅蓝色框点击第二段蓝色文字。如果是已经有文件的点击右上方加号，并选择”upload”开头选项。\n\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1392.jpeg]\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1393.jpeg]\n[image: https://raw.githubusercontent.com/FDO-page/AAAAC/main/IMG_1394.jpeg]\n\n这时候会进入一个新的界面，如果你是电脑用户，你可以直接将想要上传的图片拖进中间的框内。如果你是手机版用户，你可以点击中间的蓝色文字。以苹果手机为例，再点击相册，选择照片上传。等待进度条全部变绿，点击下方绿色”commit change”保存。\n\n接下来点击其中一个图片的名称，进入后长按下方的图片，选择“打开图片”（或“在新页面打开”）。点击上方网址，复制下来，这就是你在引用图片将会填写的网址。接下来如果还有其他图片，你只需要根据名称（一串四位数数字）更改你得到的链接里的相应数字串即可。\n\n在正文部分，你并不能通过换行来使最终效果换行。而是要通过“\”+“n”进行换行，记得是英文符号。如果你嫌手动换行麻烦，可以（特别推荐）使用[link:这个网站](https://fdo-page.github.io/words/)转换你的文章。\n\n快去构建你的网站吧～\n</p>
             </div>
         </div>
     </div>
@@ -153,12 +163,17 @@
     <script>
         function processLinks() {
             const content = document.querySelector('.content');
-            content.innerHTML = content.innerHTML.replace(/\[link:(.*?)\]\((.*?)\)/g, '<a href="$2"target="_blank">$1</a>');
+            content.innerHTML = content.innerHTML.replace(/\[link:(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
         }
-
+        
         function processLineBreaks() {
             const content = document.querySelector('.content');
             content.innerHTML = content.innerHTML.replace(/\\n/g, '<br>');
+        }
+
+        function processImages() {
+            const content = document.querySelector('.content');
+            content.innerHTML = content.innerHTML.replace(/\[image:\s*(.*?)\]/g, '<img src="$1" alt="Image">');
         }
 
         function closeWebsite() {
@@ -168,6 +183,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             processLinks();
             processLineBreaks();
+            processImages();
         });
     </script>
 </body>
